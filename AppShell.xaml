@@ -9,6 +9,7 @@
     Shell.TitleColor="{DynamicResource Ink}"
     Shell.ForegroundColor="{DynamicResource Primary}"
     Shell.TabBarBackgroundColor="{DynamicResource Surface}"
+    Shell.TabBarForegroundColor="{DynamicResource Primary}"
     Shell.TabBarTitleColor="{DynamicResource Primary}"
     Shell.TabBarUnselectedColor="{DynamicResource Muted}"
     Shell.NavBarHasShadow="False"
