@@ -18,6 +18,7 @@
             <Label
                 Style="{StaticResource PageSubtitle}"
                 Text="Find a title, author, genre or status" />
+            <BoxView Style="{StaticResource GoldRule}" Margin="0,8,0,0" />
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Padding="20,0,20,12" Spacing="10">
@@ -136,11 +137,8 @@
                                         CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
                                 <Grid ColumnDefinitions="52,*" ColumnSpacing="12">
-                                    <Border
-                                        BackgroundColor="{DynamicResource Spine}"
+                                    <Border Style="{StaticResource CoverBorder}"
                                         HeightRequest="76"
-                                        StrokeShape="RoundRectangle 10"
-                                        StrokeThickness="0"
                                         VerticalOptions="Start"
                                         WidthRequest="52">
                                         <Grid>
@@ -149,7 +147,7 @@
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource HasValue}}"
                                                 Source="{Binding CoverPath}" />
                                             <Label
-                                                FontFamily="OpenSansSemibold"
+                                                FontFamily="DMSerifDisplay"
                                                 FontSize="20"
                                                 HorizontalOptions="Center"
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}"
@@ -177,7 +175,7 @@
                 Spacing="10"
                 VerticalOptions="Center">
                 <Label
-                    FontFamily="OpenSansSemibold"
+                    FontFamily="DMSerifDisplay"
                     FontSize="19"
                     HorizontalTextAlignment="Center"
                     Text="No books found"
@@ -209,12 +207,12 @@
                                     <Border
                                         BackgroundColor="{Binding CoverColor}"
                                         HeightRequest="76"
-                                        StrokeShape="RoundRectangle 10"
+                                        StrokeShape="RoundRectangle 4,10,10,4"
                                         StrokeThickness="0"
                                         VerticalOptions="Start"
                                         WidthRequest="52">
                                         <Label
-                                            FontFamily="OpenSansSemibold"
+                                            FontFamily="DMSerifDisplay"
                                             FontSize="20"
                                             HorizontalOptions="Center"
                                             Text="{Binding Initial}"

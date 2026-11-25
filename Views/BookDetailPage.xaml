@@ -45,11 +45,8 @@
 
                 <Border Padding="14" Style="{StaticResource CardBorder}">
                     <Grid ColumnDefinitions="96,*" ColumnSpacing="16">
-                        <Border
-                            BackgroundColor="{DynamicResource Spine}"
+                        <Border Style="{StaticResource CoverBorder}"
                             HeightRequest="144"
-                            StrokeShape="RoundRectangle 12"
-                            StrokeThickness="0"
                             VerticalOptions="Start"
                             WidthRequest="96">
                             <Grid>
@@ -58,7 +55,7 @@
                                     IsVisible="{Binding Book.CoverPath, Converter={StaticResource HasValue}}"
                                     Source="{Binding Book.CoverPath}" />
                                 <Label
-                                    FontFamily="OpenSansSemibold"
+                                    FontFamily="DMSerifDisplay"
                                     FontSize="28"
                                     HorizontalOptions="Center"
                                     IsVisible="{Binding Book.CoverPath, Converter={StaticResource InverseHasValue}}"
@@ -101,7 +98,7 @@
                                 VerticalOptions="Center" />
                             <Label
                                 Grid.Column="1"
-                                FontFamily="OpenSansSemibold"
+                                FontFamily="DMSerifDisplay"
                                 FontSize="22"
                                 Text="{Binding Book.ProgressLabel}"
                                 TextColor="{DynamicResource Ink}" />

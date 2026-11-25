@@ -43,7 +43,7 @@
                                 <Label HorizontalOptions="End" Style="{StaticResource SectionCaption}" Text="BEST STREAK" />
                                 <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="6">
                                     <Label
-                                        FontFamily="OpenSansSemibold"
+                                        FontFamily="DMSerifDisplay"
                                         FontSize="22"
                                         Text="{Binding Stats.LongestStreak}"
                                         TextColor="{DynamicResource Primary}" />
@@ -287,7 +287,7 @@
                             VerticalOptions="Center" />
                     </Border>
                     <Label
-                        FontFamily="OpenSansSemibold"
+                        FontFamily="DMSerifDisplay"
                         FontSize="19"
                         HorizontalTextAlignment="Center"
                         Margin="0,2,0,0"

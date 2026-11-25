@@ -21,9 +21,18 @@
             StrokeThickness="0">
             <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
                 <VerticalStackLayout Grid.Column="0" Spacing="2" VerticalOptions="Center">
-                    <Label Style="{StaticResource PageTitle}" Text="Library" />
+                    <Label Style="{StaticResource SectionCaption}" Text="YOUR COLLECTION" />
+                    <Label Style="{StaticResource PageTitle}" Text="My Library" />
                     <Label Style="{StaticResource PageSubtitle}" Text="{Binding Books.Count, StringFormat='{0} books'}" />
+                    <BoxView Style="{StaticResource GoldRule}" Margin="0,8,0,0" />
                 </VerticalStackLayout>
+                <Image
+                    Grid.Column="1"
+                    Aspect="AspectFit"
+                    HeightRequest="52"
+                    Source="pagely_logo.png"
+                    VerticalOptions="Center"
+                    WidthRequest="52" />
             </Grid>
         </Border>
 
@@ -51,11 +60,8 @@
                             </VerticalStackLayout.GestureRecognizers>
 
                             <!-- Cover -->
-                            <Border
-                                BackgroundColor="{DynamicResource Spine}"
+                            <Border Style="{StaticResource CoverBorder}"
                                 HeightRequest="180"
-                                StrokeShape="RoundRectangle 10"
-                                StrokeThickness="0"
                                 WidthRequest="120"
                                 HorizontalOptions="Center">
                                 <Grid>
@@ -64,7 +70,7 @@
                                         IsVisible="{Binding CoverPath, Converter={StaticResource HasValue}}"
                                         Source="{Binding CoverPath}" />
                                     <Label
-                                        FontFamily="OpenSansSemibold"
+                                        FontFamily="DMSerifDisplay"
                                         FontSize="28"
                                         HorizontalOptions="Center"
                                         IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}"
@@ -106,27 +112,18 @@
                 Padding="40,0"
                 Spacing="12"
                 VerticalOptions="Center">
-                <Border
-                    BackgroundColor="{DynamicResource SurfaceAlt}"
-                    HeightRequest="56"
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="110"
                     HorizontalOptions="Center"
-                    StrokeShape="RoundRectangle 18"
-                    StrokeThickness="0"
-                    WidthRequest="56">
-                    <Label
-                        FontFamily="OpenSansSemibold"
-                        FontSize="24"
-                        HorizontalOptions="Center"
-                        Text="P"
-                        TextColor="{DynamicResource Primary}"
-                        VerticalOptions="Center" />
-                </Border>
+                    Source="pagely_logo.png"
+                    WidthRequest="110" />
                 <Label
-                    FontFamily="OpenSansSemibold"
+                    FontFamily="DMSerifDisplay"
                     FontSize="18"
                     HorizontalTextAlignment="Center"
                     Text="Your shelves are empty"
-                    TextColor="{DynamicResource Ink}" />
+                    TextColor="{DynamicResource Primary}" />
                 <Label
                     HorizontalTextAlignment="Center"
                     MaximumWidthRequest="290"

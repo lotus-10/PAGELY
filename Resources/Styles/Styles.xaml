@@ -27,12 +27,12 @@
          Primary is the one action worth tapping, Secondary is a tonal surface
          fill, Icon is a circle for header affordances. -->
     <Style TargetType="Button">
-        <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
-        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryDark}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Secondary}" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="14"/>
+        <Setter Property="CornerRadius" Value="24"/>
         <Setter Property="Padding" Value="16,10"/>
         <Setter Property="HeightRequest" Value="48"/>
         <Setter Property="MinimumHeightRequest" Value="48"/>
@@ -64,7 +64,10 @@
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="14"/>
+        <Setter Property="Shadow">
+            <Shadow Brush="#4A2411" Offset="0,4" Radius="10" Opacity="0.22" />
+        </Setter>
+        <Setter Property="CornerRadius" Value="24"/>
         <Setter Property="Padding" Value="20,10"/>
         <Setter Property="HeightRequest" Value="48"/>
         <Setter Property="MinimumHeightRequest" Value="48"/>
@@ -95,12 +98,12 @@
     </Style>
 
     <Style TargetType="Button" x:Key="ButtonSecondary">
-        <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
-        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Secondary}" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="14"/>
+        <Setter Property="CornerRadius" Value="24"/>
         <Setter Property="Padding" Value="20,10"/>
         <Setter Property="HeightRequest" Value="48"/>
         <Setter Property="MinimumHeightRequest" Value="48"/>
@@ -131,8 +134,8 @@
     </Style>
 
     <Style TargetType="Button" x:Key="ButtonIcon">
-        <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Secondary}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="BorderWidth" Value="0"/>
@@ -173,6 +176,9 @@
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="BorderWidth" Value="0"/>
+        <Setter Property="Shadow">
+            <Shadow Brush="#4A2411" Offset="0,4" Radius="10" Opacity="0.22" />
+        </Setter>
         <Setter Property="CornerRadius" Value="22"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="WidthRequest" Value="44"/>
@@ -211,46 +217,46 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource Card}" />
         <Setter Property="Stroke" Value="{DynamicResource Divider}" />
         <Setter Property="StrokeThickness" Value="1" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 16" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 20" />
         <Setter Property="Padding" Value="14" />
         <Setter Property="Shadow">
-            <Shadow Brush="#000000" Offset="0,2" Radius="8" Opacity="0.08" />
+            <Shadow Brush="#4A2411" Offset="0,3" Radius="12" Opacity="0.09" />
         </Setter>
     </Style>
 
     <Style TargetType="Border" x:Key="ChipBorder">
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Secondary}" />
         <Setter Property="Stroke" Value="Transparent" />
         <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 10" />
-        <Setter Property="Padding" Value="9,4" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 18" />
+        <Setter Property="Padding" Value="11,5" />
     </Style>
 
     <!-- Rounded inset field: wraps an Entry, SearchBar or Picker so the control
          itself never draws the frame. -->
     <Style TargetType="Border" x:Key="FieldBorder">
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
-        <Setter Property="Stroke" Value="Transparent" />
-        <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 14" />
-        <Setter Property="Padding" Value="4,0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Surface}" />
+        <Setter Property="Stroke" Value="{DynamicResource Divider}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 22" />
+        <Setter Property="Padding" Value="10,0" />
     </Style>
 
     <!-- Track for a rounded progress bar: put a transparent ProgressBar inside. -->
     <Style TargetType="Border" x:Key="ProgressPill">
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray200}" />
         <Setter Property="Stroke" Value="Transparent" />
         <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 4" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 3" />
         <Setter Property="Padding" Value="0" />
     </Style>
 
     <!-- Type scale: 26 page title · 19 featured · 16 card title · 14 body ·
          12 meta · 11 section caption. -->
     <Style TargetType="Label" x:Key="PageTitle">
-        <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="FontFamily" Value="OpenSansSemibold" />
-        <Setter Property="FontSize" Value="26" />
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontFamily" Value="DMSerifDisplay" />
+        <Setter Property="FontSize" Value="30" />
     </Style>
 
     <Style TargetType="Label" x:Key="PageSubtitle">
@@ -261,8 +267,8 @@
 
     <Style TargetType="Label" x:Key="CardTitle">
         <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="FontFamily" Value="OpenSansSemibold" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="DMSerifDisplay" />
+        <Setter Property="FontSize" Value="17" />
         <Setter Property="LineBreakMode" Value="TailTruncation" />
     </Style>
 
@@ -274,17 +280,17 @@
     </Style>
 
     <Style TargetType="Label" x:Key="StatValue">
-        <Setter Property="TextColor" Value="{DynamicResource Ink}" />
-        <Setter Property="FontFamily" Value="OpenSansSemibold" />
-        <Setter Property="FontSize" Value="22" />
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontFamily" Value="DMSerifDisplay" />
+        <Setter Property="FontSize" Value="26" />
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
     <Style TargetType="Label" x:Key="SectionCaption">
-        <Setter Property="TextColor" Value="{DynamicResource Muted}" />
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryLight}" />
         <Setter Property="FontFamily" Value="OpenSansSemibold" />
         <Setter Property="FontSize" Value="11" />
-        <Setter Property="CharacterSpacing" Value="1.2" />
+        <Setter Property="CharacterSpacing" Value="1.6" />
     </Style>
 
     <Style TargetType="Label" x:Key="Caption">
@@ -512,7 +518,7 @@
         <Setter Property="TextColor" Value="{DynamicResource Ink}" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource Muted}" />
         <Setter Property="CancelButtonColor" Value="{DynamicResource Primary}" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
@@ -536,7 +542,7 @@
     <Style TargetType="SearchHandler">
         <Setter Property="TextColor" Value="{DynamicResource Ink}" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource Muted}" />
-        <Setter Property="BackgroundColor" Value="{DynamicResource SurfaceAlt}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -695,6 +701,54 @@
 
     <Style TargetType="Grid">
         <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <!-- ===== New in the redesign ===== -->
+
+    <!-- Welcome / hero card: warm gradient, big radius, soft shadow -->
+    <Style TargetType="Border" x:Key="HeroCard">
+        <Setter Property="Background" Value="{DynamicResource HeroGradientBrush}" />
+        <Setter Property="Stroke" Value="{DynamicResource Divider}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="Padding" Value="22,24" />
+        <Setter Property="Shadow">
+            <Shadow Brush="#4A2411" Offset="0,3" Radius="12" Opacity="0.08" />
+        </Setter>
+    </Style>
+
+    <!-- Book cover tile: rounded on the open side, shadow like a book on a shelf -->
+    <Style TargetType="Border" x:Key="CoverBorder">
+        <Setter Property="Background" Value="{DynamicResource CoverBrownBrush}" />
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 4,10,10,4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Shadow">
+            <Shadow Brush="#4A2411" Offset="3,5" Radius="8" Opacity="0.28" />
+        </Setter>
+    </Style>
+
+    <!-- Large serif heading for hero / section titles -->
+    <Style TargetType="Label" x:Key="HeroTitle">
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontFamily" Value="DMSerifDisplay" />
+        <Setter Property="FontSize" Value="34" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="SectionTitle">
+        <Setter Property="TextColor" Value="{DynamicResource Primary}" />
+        <Setter Property="FontFamily" Value="DMSerifDisplay" />
+        <Setter Property="FontSize" Value="22" />
+    </Style>
+
+    <!-- Short gold rule under page titles -->
+    <Style TargetType="BoxView" x:Key="GoldRule">
+        <Setter Property="BackgroundColor" Value="{DynamicResource WarmAccent}" />
+        <Setter Property="HeightRequest" Value="3" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="HorizontalOptions" Value="Start" />
     </Style>
 
 </ResourceDictionary>

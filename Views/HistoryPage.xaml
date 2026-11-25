@@ -44,11 +44,8 @@
                                         CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
                                 <Grid RowDefinitions="Auto,Auto,*,Auto">
-                                    <Border
-                                        BackgroundColor="{DynamicResource Spine}"
+                                    <Border Style="{StaticResource CoverBorder}"
                                         HeightRequest="78"
-                                        StrokeShape="RoundRectangle 10"
-                                        StrokeThickness="0"
                                         VerticalOptions="Start">
                                         <Grid>
                                             <Image
@@ -56,7 +53,7 @@
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource HasValue}}"
                                                 Source="{Binding CoverPath}" />
                                             <Label
-                                                FontFamily="OpenSansSemibold"
+                                                FontFamily="DMSerifDisplay"
                                                 FontSize="22"
                                                 HorizontalOptions="Center"
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}"
@@ -160,7 +157,7 @@
                         VerticalOptions="Center" />
                 </Border>
                 <Label
-                    FontFamily="OpenSansSemibold"
+                    FontFamily="DMSerifDisplay"
                     FontSize="19"
                     HorizontalTextAlignment="Center"
                     Margin="0,2,0,0"
