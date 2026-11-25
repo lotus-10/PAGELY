@@ -13,12 +13,31 @@
 
     <Grid RowDefinitions="Auto,Auto,Auto,*">
 
-        <VerticalStackLayout Padding="20,16,20,12" Spacing="2">
-            <Label Style="{StaticResource PageTitle}" Text="Search" />
-            <Label
-                Style="{StaticResource PageSubtitle}"
-                Text="Find a title, author, genre or status" />
-            <BoxView Style="{StaticResource GoldRule}" Margin="0,8,0,0" />
+        <VerticalStackLayout Spacing="0">
+            <!-- Brand bar -->
+            <Grid BackgroundColor="{DynamicResource Paper}" ColumnDefinitions="Auto,*" ColumnSpacing="12" Padding="20,12,20,12">
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="44"
+                    Source="pagely_logo.png"
+                    VerticalOptions="Center"
+                    WidthRequest="44" />
+                <VerticalStackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
+                    <Label
+                        CharacterSpacing="3"
+                        FontSize="20"
+                        Style="{StaticResource CardTitle}"
+                        Text="PAGELY" />
+                    <Label Style="{StaticResource Caption}" Text="Your personal reading space" />
+                </VerticalStackLayout>
+            </Grid>
+            <BoxView BackgroundColor="{DynamicResource Divider}" HeightRequest="1" />
+            <VerticalStackLayout Padding="20,20,20,8" Spacing="6">
+                <Label Style="{StaticResource Eyebrow}" Text="FIND A BOOK" />
+                <Label Style="{StaticResource PageTitle}" Text="Search" />
+                <BoxView Style="{StaticResource TitleRule}" />
+                <Label Style="{StaticResource PageSubtitle}" Text="Find a title, author, genre or status" />
+            </VerticalStackLayout>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Padding="20,0,20,12" Spacing="10">
@@ -137,8 +156,11 @@
                                         CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
                                 <Grid ColumnDefinitions="52,*" ColumnSpacing="12">
-                                    <Border Style="{StaticResource CoverBorder}"
+                                    <Border
+                                        BackgroundColor="{DynamicResource Spine}"
                                         HeightRequest="76"
+                                        StrokeShape="RoundRectangle 10"
+                                        StrokeThickness="0"
                                         VerticalOptions="Start"
                                         WidthRequest="52">
                                         <Grid>
@@ -147,7 +169,7 @@
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource HasValue}}"
                                                 Source="{Binding CoverPath}" />
                                             <Label
-                                                FontFamily="DMSerifDisplay"
+                                                FontFamily="OpenSansSemibold"
                                                 FontSize="20"
                                                 HorizontalOptions="Center"
                                                 IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}"
@@ -175,7 +197,7 @@
                 Spacing="10"
                 VerticalOptions="Center">
                 <Label
-                    FontFamily="DMSerifDisplay"
+                    FontFamily="OpenSansSemibold"
                     FontSize="19"
                     HorizontalTextAlignment="Center"
                     Text="No books found"
@@ -207,12 +229,12 @@
                                     <Border
                                         BackgroundColor="{Binding CoverColor}"
                                         HeightRequest="76"
-                                        StrokeShape="RoundRectangle 4,10,10,4"
+                                        StrokeShape="RoundRectangle 10"
                                         StrokeThickness="0"
                                         VerticalOptions="Start"
                                         WidthRequest="52">
                                         <Label
-                                            FontFamily="DMSerifDisplay"
+                                            FontFamily="OpenSansSemibold"
                                             FontSize="20"
                                             HorizontalOptions="Center"
                                             Text="{Binding Initial}"

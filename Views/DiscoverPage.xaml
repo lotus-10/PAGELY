@@ -13,28 +13,42 @@
     <Grid RowDefinitions="Auto,Auto,*">
 
         <!-- Header -->
-        <Border
-            BackgroundColor="{DynamicResource Surface}"
-            Padding="24,28,20,20"
-            StrokeShape="RoundRectangle 0,0,28,28"
-            StrokeThickness="0">
-            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                <VerticalStackLayout Spacing="4">
-                    <Label FontSize="30" Style="{StaticResource PageTitle}" Text="Discover" />
+        <VerticalStackLayout Grid.Row="0" Spacing="0">
+            <!-- Brand bar -->
+            <Grid BackgroundColor="{DynamicResource Paper}" ColumnDefinitions="Auto,*" ColumnSpacing="12" Padding="20,12,20,12">
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="44"
+                    Source="pagely_logo.png"
+                    VerticalOptions="Center"
+                    WidthRequest="44" />
+                <VerticalStackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
                     <Label
-                        Style="{StaticResource PageSubtitle}"
-                        Text="Find your next read. Sample catalog for now." />
+                        CharacterSpacing="3"
+                        FontSize="20"
+                        Style="{StaticResource CardTitle}"
+                        Text="PAGELY" />
+                    <Label Style="{StaticResource Caption}" Text="Your personal reading space" />
+                </VerticalStackLayout>
+            </Grid>
+            <BoxView BackgroundColor="{DynamicResource Divider}" HeightRequest="1" />
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12" Padding="20,20,20,8">
+                <VerticalStackLayout Spacing="6">
+                    <Label Style="{StaticResource Eyebrow}" Text="FIND YOUR NEXT READ" />
+                    <Label Style="{StaticResource PageTitle}" Text="Discover" />
+                    <BoxView Style="{StaticResource TitleRule}" />
+                    <Label Style="{StaticResource PageSubtitle}" Text="Sample catalog for now." />
                 </VerticalStackLayout>
                 <Button
                     Grid.Column="1"
                     Command="{Binding OpenSearchCommand}"
                     HeightRequest="40"
-                    Padding="14,0"
+                    Padding="18,0"
                     Style="{StaticResource ButtonSecondary}"
                     Text="Search"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Start" />
             </Grid>
-        </Border>
+        </VerticalStackLayout>
 
         <!-- Filters: genre buttons and sort order -->
         <VerticalStackLayout
@@ -55,7 +69,7 @@
                             BackgroundColor="{DynamicResource Surface}"
                             Padding="14,8"
                             Stroke="{DynamicResource Divider}"
-                            StrokeShape="RoundRectangle 18"
+                            StrokeShape="RoundRectangle 20"
                             StrokeThickness="1"
                             VerticalOptions="Center">
                             <Border.Triggers>

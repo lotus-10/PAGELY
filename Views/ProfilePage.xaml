@@ -104,8 +104,8 @@
                                         <TapGestureRecognizer Command="{Binding BindingContext.OpenCommand, Source={x:Reference ReadingListRoot}}" CommandParameter="{Binding .}" />
                                     </Border.GestureRecognizers>
                                     <Grid ColumnDefinitions="52,*,Auto" ColumnSpacing="12">
-                                        <Border BackgroundColor="{Binding CoverColor}" HeightRequest="76" StrokeShape="RoundRectangle 4,10,10,4" StrokeThickness="0" VerticalOptions="Start" WidthRequest="52">
-                                            <Label FontFamily="DMSerifDisplay" FontSize="20" HorizontalOptions="Center" Text="{Binding Initial}" TextColor="{DynamicResource Surface}" VerticalOptions="Center" />
+                                        <Border BackgroundColor="{Binding CoverColor}" HeightRequest="76" StrokeShape="RoundRectangle 10" StrokeThickness="0" VerticalOptions="Start" WidthRequest="52">
+                                            <Label FontFamily="OpenSansSemibold" FontSize="20" HorizontalOptions="Center" Text="{Binding Initial}" TextColor="{DynamicResource Surface}" VerticalOptions="Center" />
                                         </Border>
                                         <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
                                             <Label FontSize="15" Style="{StaticResource CardTitle}" Text="{Binding Title}" />
@@ -119,7 +119,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <VerticalStackLayout HorizontalOptions="Center" IsVisible="{Binding IsEmpty}" Padding="40,0" Spacing="8" VerticalOptions="Center">
-                    <Label FontFamily="DMSerifDisplay" FontSize="19" HorizontalTextAlignment="Center" Text="Your reading list is empty" TextColor="{DynamicResource Ink}" />
+                    <Label FontFamily="OpenSansSemibold" FontSize="19" HorizontalTextAlignment="Center" Text="Your reading list is empty" TextColor="{DynamicResource Ink}" />
                     <Label HorizontalTextAlignment="Center" MaximumWidthRequest="290" Style="{StaticResource PageSubtitle}" Text="Save books from Discover to read them later." />
                 </VerticalStackLayout>
             </Grid>
@@ -146,10 +146,10 @@
                                             <TapGestureRecognizer Command="{Binding BindingContext.OpenBookCommand, Source={x:Reference HistoryRoot}}" CommandParameter="{Binding .}" />
                                         </Border.GestureRecognizers>
                                         <Grid RowDefinitions="Auto,Auto,*,Auto">
-                                            <Border Style="{StaticResource CoverBorder}" HeightRequest="78" VerticalOptions="Start">
+                                            <Border BackgroundColor="{DynamicResource Spine}" HeightRequest="78" StrokeShape="RoundRectangle 10" StrokeThickness="0" VerticalOptions="Start">
                                                 <Grid>
                                                     <Image Aspect="AspectFill" IsVisible="{Binding CoverPath, Converter={StaticResource HasValue}}" Source="{Binding CoverPath}" />
-                                                    <Label FontFamily="DMSerifDisplay" FontSize="22" HorizontalOptions="Center" IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}" Text="{Binding Initial}" TextColor="{DynamicResource Surface}" VerticalOptions="Center" />
+                                                    <Label FontFamily="OpenSansSemibold" FontSize="22" HorizontalOptions="Center" IsVisible="{Binding CoverPath, Converter={StaticResource InverseHasValue}}" Text="{Binding Initial}" TextColor="{DynamicResource Surface}" VerticalOptions="Center" />
                                                 </Grid>
                                             </Border>
                                             <Label Grid.Row="1" FontFamily="OpenSansSemibold" FontSize="13" LineBreakMode="TailTruncation" Margin="0,10,0,0" MaxLines="2" Text="{Binding Title}" TextColor="{DynamicResource Ink}" />
@@ -192,7 +192,7 @@
                         </CollectionView>
                     </VerticalStackLayout>
                     <VerticalStackLayout HorizontalOptions="Center" IsVisible="{Binding IsEmpty}" Padding="20,40" Spacing="12">
-                        <Label FontFamily="DMSerifDisplay" FontSize="19" HorizontalTextAlignment="Center" Text="Nothing here yet" TextColor="{DynamicResource Ink}" />
+                        <Label FontFamily="OpenSansSemibold" FontSize="19" HorizontalTextAlignment="Center" Text="Nothing here yet" TextColor="{DynamicResource Ink}" />
                         <Label HorizontalTextAlignment="Center" MaximumWidthRequest="290" Style="{StaticResource PageSubtitle}" Text="Open a book from your library and your reading activity will show up here." />
                     </VerticalStackLayout>
                 </VerticalStackLayout>
@@ -250,9 +250,36 @@
         </DataTemplate>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,Auto,*">
+        <VerticalStackLayout Grid.Row="0" Spacing="0">
+            <!-- Brand bar -->
+            <Grid BackgroundColor="{DynamicResource Paper}" ColumnDefinitions="Auto,*" ColumnSpacing="12" Padding="20,12,20,12">
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="44"
+                    Source="pagely_logo.png"
+                    VerticalOptions="Center"
+                    WidthRequest="44" />
+                <VerticalStackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
+                    <Label
+                        CharacterSpacing="3"
+                        FontSize="20"
+                        Style="{StaticResource CardTitle}"
+                        Text="PAGELY" />
+                    <Label Style="{StaticResource Caption}" Text="Your personal reading space" />
+                </VerticalStackLayout>
+            </Grid>
+            <BoxView BackgroundColor="{DynamicResource Divider}" HeightRequest="1" />
+            <VerticalStackLayout Padding="20,20,20,8" Spacing="6">
+                <Label Style="{StaticResource Eyebrow}" Text="YOUR READING LIFE" />
+                <Label Style="{StaticResource PageTitle}" Text="Profile" />
+                <BoxView Style="{StaticResource TitleRule}" />
+                
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
         <!-- Tab bar -->
-        <Grid ColumnDefinitions="*,*,*,*" Padding="12,16,12,8" BackgroundColor="{DynamicResource Surface}">
+        <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" Padding="12,4,12,6" BackgroundColor="{DynamicResource Paper}">
             <Label Grid.Column="0" Text="Profile" HorizontalTextAlignment="Center" FontFamily="OpenSansSemibold" FontSize="13" Padding="4,6" TextColor="{DynamicResource Muted}">
                 <Label.Triggers>
                     <DataTrigger TargetType="Label" Binding="{Binding SelectedTab}" Value="0">
@@ -293,9 +320,9 @@
                     <TapGestureRecognizer Tapped="OnTabTapped" CommandParameter="3" />
                 </Label.GestureRecognizers>
             </Label>
-            <BoxView Grid.Column="{Binding SelectedTab}" CornerRadius="2" HeightRequest="3" VerticalOptions="End" Color="{DynamicResource Primary}" HorizontalOptions="Center" WidthRequest="34" />
+            <BoxView Grid.Column="{Binding SelectedTab}" HeightRequest="3" VerticalOptions="End" Color="{DynamicResource Primary}" HorizontalOptions="Center" WidthRequest="40" />
         </Grid>
 
-        <CarouselView x:Name="TabsCarousel" Grid.Row="1" ItemsSource="{Binding Tabs}" Position="{Binding SelectedTab, Mode=TwoWay}" Loop="False" />
+        <CarouselView x:Name="TabsCarousel" Grid.Row="2" ItemsSource="{Binding Tabs}" Position="{Binding SelectedTab, Mode=TwoWay}" Loop="False" />
     </Grid>
 </ContentPage>

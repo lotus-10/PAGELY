@@ -1,62 +1,53 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <!-- Cream paper and deep cocoa brown (matches the Pagely Figma and the web redesign).
-         Every key from the old palette is kept, so no page needs to change.
-
-         Paper is the app background, Ink is the reading text; every other tone is
-         one quiet step between the two (Surface/SurfaceAlt for raised and inset
-         fills, Card for book cards, Divider for hairlines, Muted for metadata). -->
+    <!-- Cream paper and deep cocoa, sampled from the Pagely web redesign.
+         Every original key is kept, so no page needs to change.
+         Paper is the app background, Card the raised surface, Ink the cocoa text,
+         Secondary the soft tint behind pills and icon tiles, Accent the gold rule. -->
     <Color x:Key="Primary">#4A2411</Color>
     <Color x:Key="PrimaryDark">#331708</Color>
     <Color x:Key="PrimaryLight">#8B5A3C</Color>
     <Color x:Key="Secondary">#F3E6D9</Color>
     <Color x:Key="SecondaryAlt">#EAD8C9</Color>
     <Color x:Key="Surface">#FFFDF8</Color>
-    <Color x:Key="SurfaceAlt">#F5EBDD</Color>
+    <Color x:Key="SurfaceAlt">#F3E6D9</Color>
     <Color x:Key="Paper">#FFF8EC</Color>
     <Color x:Key="Card">#FFFDF8</Color>
     <Color x:Key="PageBackdrop">#EADFD1</Color>
-    <Color x:Key="Ink">#3A2418</Color>
+    <Color x:Key="Ink">#4A2411</Color>
     <Color x:Key="InkSoft">#5A3F2E</Color>
     <Color x:Key="Muted">#7D6757</Color>
     <Color x:Key="Divider">#EADFD1</Color>
     <Color x:Key="Shadow">#4A2411</Color>
     <Color x:Key="Spine">#6B3A1F</Color>
-    <Color x:Key="Accent">#A98654</Color>
+    <Color x:Key="Accent">#C79A5B</Color>
     <Color x:Key="Success">#6C8A6E</Color>
     <Color x:Key="Danger">#B3382C</Color>
     <Color x:Key="StatusTbr">#7C93A3</Color>
-    <Color x:Key="StatusReading">#A98654</Color>
+    <Color x:Key="StatusReading">#C79A5B</Color>
     <Color x:Key="StatusCompleted">#6C8A6E</Color>
     <Color x:Key="StatusDropped">#A5766A</Color>
     <Color x:Key="Highlight">#E9D7A4</Color>
-    <Color x:Key="HighlightSoft">#F7E2C4</Color>
+    <Color x:Key="HighlightSoft">#F2E7C9</Color>
     <Color x:Key="WarmAccent">#C79A5B</Color>
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="OffBlack">#1B1815</Color>
-    <!-- New: book-cover cloth colours (use two per cover for a gradient) -->
-    <Color x:Key="GoldGlow">#ECBE6A</Color>
-    <Color x:Key="CoverBrown">#6B3A1F</Color>
-    <Color x:Key="CoverBrownDark">#4A2411</Color>
-    <Color x:Key="CoverSage">#7D8F6A</Color>
-    <Color x:Key="CoverSageDark">#566B49</Color>
-    <Color x:Key="CoverBrick">#A8574A</Color>
-    <Color x:Key="CoverBrickDark">#7D3A31</Color>
-    <Color x:Key="CoverSlate">#5D788F</Color>
-    <Color x:Key="CoverSlateDark">#3B5367</Color>
-    <Color x:Key="CoverGold">#C79A5B</Color>
-    <Color x:Key="CoverGoldDark">#96692D</Color>
     <!-- Neutral ramp, warmed so it never fights the paper background. -->
-    <Color x:Key="Gray100">#F3EEE4</Color>
-    <Color x:Key="Gray200">#E9DFD2</Color>
-    <Color x:Key="Gray300">#D9CBBB</Color>
-    <Color x:Key="Gray400">#B7A596</Color>
+    <Color x:Key="Gray100">#F8EFE4</Color>
+    <Color x:Key="Gray200">#EADFD1</Color>
+    <Color x:Key="Gray300">#D9C7B0</Color>
+    <Color x:Key="Gray400">#A89484</Color>
     <Color x:Key="Gray500">#7D6757</Color>
     <Color x:Key="Gray600">#5A3F2E</Color>
-    <Color x:Key="Gray900">#3A2418</Color>
-    <Color x:Key="Gray950">#2A1C10</Color>
+    <Color x:Key="Gray900">#4A2411</Color>
+    <Color x:Key="Gray950">#331708</Color>
+    <Color x:Key="EyebrowColor">#8B5A3C</Color>
+    <Color x:Key="DashedStroke">#D9C7B0</Color>
+    <!-- Titles use a display serif (Georgia on Windows/iOS, the built-in serif on Android);
+         see PageTitle / CardTitle / StatValue in Styles.xaml. To switch to DM Serif Display, add the .ttf
+         to Resources/Fonts, register it in MauiProgram.cs and replace the three OnPlatform blocks. -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource Surface}"/>
@@ -87,33 +78,4 @@
     <SolidColorBrush x:Key="StatusCompletedBrush" Color="{StaticResource StatusCompleted}"/>
     <SolidColorBrush x:Key="StatusDroppedBrush" Color="{StaticResource StatusDropped}"/>
     <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource Danger}"/>
-    <!-- New: gradients -->
-    <LinearGradientBrush x:Key="HeroGradientBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource Secondary}" Offset="0.0" />
-        <GradientStop Color="{StaticResource HighlightSoft}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="PrimaryGradientBrush" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#65351D" Offset="0.0" />
-        <GradientStop Color="{StaticResource Primary}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CoverBrownBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource CoverBrown}" Offset="0.0" />
-        <GradientStop Color="{StaticResource CoverBrownDark}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CoverSageBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource CoverSage}" Offset="0.0" />
-        <GradientStop Color="{StaticResource CoverSageDark}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CoverBrickBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource CoverBrick}" Offset="0.0" />
-        <GradientStop Color="{StaticResource CoverBrickDark}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CoverSlateBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource CoverSlate}" Offset="0.0" />
-        <GradientStop Color="{StaticResource CoverSlateDark}" Offset="1.0" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CoverGoldBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Color="{StaticResource CoverGold}" Offset="0.0" />
-        <GradientStop Color="{StaticResource CoverGoldDark}" Offset="1.0" />
-    </LinearGradientBrush>
 </ResourceDictionary>
